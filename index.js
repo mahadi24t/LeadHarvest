@@ -29,6 +29,17 @@
 // Create two variables:
 // myLeads -> should be assigned to an empty array
 // inputEl -> should be assigned to the text input field
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js"
+
+  const firebaseConfig = { 
+
+  }
+
+const app = initializeApp(firebaseConfig);
+
+console.log(app)
+
 let myLeads = []
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
@@ -37,6 +48,7 @@ const ulEl = document.getElementById("ul-el")
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value)
     // 2. Call the renderLeads() function
+    inputEl.value=""
     renderLeads()
 })
 
