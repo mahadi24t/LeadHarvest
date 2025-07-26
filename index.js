@@ -17,6 +17,10 @@ const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
 const deleteBtn = document.getElementById("delete-btn")
 
+let name  = localStorage.setItem("myName","Md. Mahadi Hasan")
+
+console.log(name);
+
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value)
     inputEl.value = ""
