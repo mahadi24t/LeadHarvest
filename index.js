@@ -12,19 +12,30 @@ const app = initializeApp(firebaseConfig)
 const database = getDatabase(app)
 const referenceInDB = ref(database, "leads")
 
+// let yLeads = `["www.awesomelead.com"]`
+// yLeads = JSON.parse(yLeads)
+// yLeads.push("www.hero.com")
+// yLeads = JSON.stringify(yLeads)
+// console.log(typeof yLeads)
+let myLeads[]
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
 const deleteBtn = document.getElementById("delete-btn")
 
-let name  = localStorage.setItem("myName","Md. Mahadi Hasan")
+// let name  = localStorage.setItem("myName","Md. Mahadi Hasan")
 
-console.log(name);
+// console.log(name);
+let LeadfLstorage = JSON.parse(localStorage.getItem("myLeads"))
+console.log(LeadfLstorage)
 
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value)
     inputEl.value = ""
+    localStorage.setItem("myLeads",JSON.stringify(myLeads))
     render()
+
+    console.log( localStorage.getItem("myLeads") )
 })
 
 function render(leads) {
